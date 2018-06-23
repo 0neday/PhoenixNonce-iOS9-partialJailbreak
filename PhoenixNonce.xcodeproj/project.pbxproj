@@ -17,7 +17,21 @@
 		87F42C381F44C196001F0724 /* exploit64.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F42C301F44C196001F0724 /* exploit64.m */; };
 		87F42C391F44C196001F0724 /* find.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F42C321F44C196001F0724 /* find.m */; };
 		87F42C3A1F44C196001F0724 /* nvpatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F42C351F44C196001F0724 /* nvpatch.m */; };
-		87F42C3B1F44C196001F0724 /* set.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F42C371F44C196001F0724 /* set.m */; };
+		87F42C3B1F44C196001F0724 /* load_payload.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F42C371F44C196001F0724 /* load_payload.m */; };
+		D0087E7720DD392600C5F229 /* getshell.c in Sources */ = {isa = PBXBuildFile; fileRef = D0087E7520DD392600C5F229 /* getshell.c */; };
+		D0087E7B20DD393800C5F229 /* libjb.c in Sources */ = {isa = PBXBuildFile; fileRef = D0087E7920DD393800C5F229 /* libjb.c */; };
+		D0087E8120DD3DA100C5F229 /* bash-arm64-sig in Resources */ = {isa = PBXBuildFile; fileRef = D0087E7D20DD3DA100C5F229 /* bash-arm64-sig */; };
+		D0087E8220DD3DA100C5F229 /* bootstrap.tar in Resources */ = {isa = PBXBuildFile; fileRef = D0087E7E20DD3DA100C5F229 /* bootstrap.tar */; };
+		D0087E8320DD3DA100C5F229 /* dropbear-sig in Resources */ = {isa = PBXBuildFile; fileRef = D0087E7F20DD3DA100C5F229 /* dropbear-sig */; };
+		D0087E8420DD3DA100C5F229 /* profile in Resources */ = {isa = PBXBuildFile; fileRef = D0087E8020DD3DA100C5F229 /* profile */; };
+		D0087E8620DD41AA00C5F229 /* hosts in Resources */ = {isa = PBXBuildFile; fileRef = D0087E8520DD41AA00C5F229 /* hosts */; };
+		D05F1FE520DDF7D600CC3E04 /* kernelcache-decrypt-6s-n71ap-9.3 in Resources */ = {isa = PBXBuildFile; fileRef = D05F1FE420DDF7D600CC3E04 /* kernelcache-decrypt-6s-n71ap-9.3 */; };
+		D05F200820DDFD8500CC3E04 /* kpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = D05F200320DDFD8500CC3E04 /* kpp.mm */; };
+		D05F200920DDFD8500CC3E04 /* offsets.mm in Sources */ = {isa = PBXBuildFile; fileRef = D05F200520DDFD8500CC3E04 /* offsets.mm */; };
+		D05F200F20DDFD9A00CC3E04 /* libimg4tool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D05F200B20DDFD9A00CC3E04 /* libimg4tool.a */; };
+		D05F201020DDFD9A00CC3E04 /* liboffsetfinder64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D05F200C20DDFD9A00CC3E04 /* liboffsetfinder64.a */; };
+		D05F201120DDFD9A00CC3E04 /* libplist.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D05F200D20DDFD9A00CC3E04 /* libplist.a */; };
+		D05F201220DDFD9A00CC3E04 /* libplist++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D05F200E20DDFD9A00CC3E04 /* libplist++.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,8 +53,29 @@
 		87F42C331F44C196001F0724 /* mach-o.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mach-o.h"; sourceTree = "<group>"; };
 		87F42C341F44C196001F0724 /* nvpatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nvpatch.h; sourceTree = "<group>"; };
 		87F42C351F44C196001F0724 /* nvpatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nvpatch.m; sourceTree = "<group>"; };
-		87F42C361F44C196001F0724 /* set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = set.h; sourceTree = "<group>"; };
-		87F42C371F44C196001F0724 /* set.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = set.m; sourceTree = "<group>"; };
+		87F42C361F44C196001F0724 /* load_payload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = load_payload.h; sourceTree = "<group>"; };
+		87F42C371F44C196001F0724 /* load_payload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = load_payload.m; sourceTree = "<group>"; };
+		D0087E7520DD392600C5F229 /* getshell.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = getshell.c; sourceTree = "<group>"; };
+		D0087E7620DD392600C5F229 /* getshell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getshell.h; sourceTree = "<group>"; };
+		D0087E7920DD393800C5F229 /* libjb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libjb.c; sourceTree = "<group>"; };
+		D0087E7A20DD393800C5F229 /* libjb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libjb.h; sourceTree = "<group>"; };
+		D0087E7D20DD3DA100C5F229 /* bash-arm64-sig */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "bash-arm64-sig"; sourceTree = "<group>"; };
+		D0087E7E20DD3DA100C5F229 /* bootstrap.tar */ = {isa = PBXFileReference; lastKnownFileType = archive.tar; path = bootstrap.tar; sourceTree = "<group>"; };
+		D0087E7F20DD3DA100C5F229 /* dropbear-sig */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "dropbear-sig"; sourceTree = "<group>"; };
+		D0087E8020DD3DA100C5F229 /* profile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = profile; sourceTree = "<group>"; };
+		D0087E8520DD41AA00C5F229 /* hosts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hosts; sourceTree = "<group>"; };
+		D05F1FE420DDF7D600CC3E04 /* kernelcache-decrypt-6s-n71ap-9.3 */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "kernelcache-decrypt-6s-n71ap-9.3"; sourceTree = "<group>"; };
+		D05F200120DDFD8500CC3E04 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		D05F200220DDFD8500CC3E04 /* kpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kpp.h; sourceTree = "<group>"; };
+		D05F200320DDFD8500CC3E04 /* kpp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = kpp.mm; sourceTree = "<group>"; };
+		D05F200420DDFD8500CC3E04 /* offsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offsets.h; sourceTree = "<group>"; };
+		D05F200520DDFD8500CC3E04 /* offsets.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = offsets.mm; sourceTree = "<group>"; };
+		D05F200620DDFD8500CC3E04 /* pte_stuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pte_stuff.h; sourceTree = "<group>"; };
+		D05F200720DDFD8500CC3E04 /* sbops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sbops.h; sourceTree = "<group>"; };
+		D05F200B20DDFD9A00CC3E04 /* libimg4tool.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libimg4tool.a; sourceTree = "<group>"; };
+		D05F200C20DDFD9A00CC3E04 /* liboffsetfinder64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liboffsetfinder64.a; sourceTree = "<group>"; };
+		D05F200D20DDFD9A00CC3E04 /* libplist.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libplist.a; sourceTree = "<group>"; };
+		D05F200E20DDFD9A00CC3E04 /* libplist++.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libplist++.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +83,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D05F201120DDFD9A00CC3E04 /* libplist.a in Frameworks */,
+				D05F200F20DDFD9A00CC3E04 /* libimg4tool.a in Frameworks */,
 				684DF4B51F44CF4300F47447 /* IOKit.framework in Frameworks */,
+				D05F201220DDFD9A00CC3E04 /* libplist++.a in Frameworks */,
+				D05F201020DDFD9A00CC3E04 /* liboffsetfinder64.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,8 +104,8 @@
 				87F42C331F44C196001F0724 /* mach-o.h */,
 				87F42C341F44C196001F0724 /* nvpatch.h */,
 				87F42C351F44C196001F0724 /* nvpatch.m */,
-				87F42C361F44C196001F0724 /* set.h */,
-				87F42C371F44C196001F0724 /* set.m */,
+				87F42C361F44C196001F0724 /* load_payload.h */,
+				87F42C371F44C196001F0724 /* load_payload.m */,
 			);
 			name = Exploit;
 			sourceTree = "<group>";
@@ -104,9 +143,12 @@
 		877D1EDE1F3E1FF500C60D67 /* PhoenixNonce */ = {
 			isa = PBXGroup;
 			children = (
-				877D1EEB1F3E1FF500C60D67 /* Assets.xcassets */,
-				685913021F44C75000C82CB0 /* UI */,
+				D0087E7C20DD3D6E00C5F229 /* bootstrap */,
+				D0087E7820DD392C00C5F229 /* libjb */,
+				D0087E7420DD390A00C5F229 /* getshell */,
 				685913011F44C73900C82CB0 /* Exploit */,
+				D05F1FFC20DDFC0D00CC3E04 /* KPP */,
+				685913021F44C75000C82CB0 /* UI */,
 				877D1EDF1F3E1FF500C60D67 /* Supporting Files */,
 			);
 			path = PhoenixNonce;
@@ -116,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				877D1EF01F3E1FF500C60D67 /* Info.plist */,
+				877D1EEB1F3E1FF500C60D67 /* Assets.xcassets */,
 				877D1EE01F3E1FF500C60D67 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -127,6 +170,63 @@
 				684DF4B41F44CF4300F47447 /* IOKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0087E7420DD390A00C5F229 /* getshell */ = {
+			isa = PBXGroup;
+			children = (
+				D0087E7520DD392600C5F229 /* getshell.c */,
+				D0087E7620DD392600C5F229 /* getshell.h */,
+			);
+			name = getshell;
+			sourceTree = "<group>";
+		};
+		D0087E7820DD392C00C5F229 /* libjb */ = {
+			isa = PBXGroup;
+			children = (
+				D0087E7920DD393800C5F229 /* libjb.c */,
+				D0087E7A20DD393800C5F229 /* libjb.h */,
+			);
+			name = libjb;
+			sourceTree = "<group>";
+		};
+		D0087E7C20DD3D6E00C5F229 /* bootstrap */ = {
+			isa = PBXGroup;
+			children = (
+				D0087E8020DD3DA100C5F229 /* profile */,
+				D0087E8520DD41AA00C5F229 /* hosts */,
+				D0087E7E20DD3DA100C5F229 /* bootstrap.tar */,
+				D05F1FE420DDF7D600CC3E04 /* kernelcache-decrypt-6s-n71ap-9.3 */,
+				D0087E7D20DD3DA100C5F229 /* bash-arm64-sig */,
+				D0087E7F20DD3DA100C5F229 /* dropbear-sig */,
+			);
+			name = bootstrap;
+			sourceTree = "<group>";
+		};
+		D05F1FFC20DDFC0D00CC3E04 /* KPP */ = {
+			isa = PBXGroup;
+			children = (
+				D05F200A20DDFD8800CC3E04 /* libs */,
+				D05F200120DDFD8500CC3E04 /* common.h */,
+				D05F200220DDFD8500CC3E04 /* kpp.h */,
+				D05F200320DDFD8500CC3E04 /* kpp.mm */,
+				D05F200420DDFD8500CC3E04 /* offsets.h */,
+				D05F200520DDFD8500CC3E04 /* offsets.mm */,
+				D05F200620DDFD8500CC3E04 /* pte_stuff.h */,
+				D05F200720DDFD8500CC3E04 /* sbops.h */,
+			);
+			name = KPP;
+			sourceTree = "<group>";
+		};
+		D05F200A20DDFD8800CC3E04 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				D05F200B20DDFD9A00CC3E04 /* libimg4tool.a */,
+				D05F200C20DDFD9A00CC3E04 /* liboffsetfinder64.a */,
+				D05F200D20DDFD9A00CC3E04 /* libplist.a */,
+				D05F200E20DDFD9A00CC3E04 /* libplist++.a */,
+			);
+			name = libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,8 +260,8 @@
 				TargetAttributes = {
 					877D1EDB1F3E1FF500C60D67 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = XXXXXXXXXX;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = C3F6B6U77S;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -191,6 +291,12 @@
 				877D1EEF1F3E1FF500C60D67 /* LaunchScreen.storyboard in Resources */,
 				877D1EEC1F3E1FF500C60D67 /* Assets.xcassets in Resources */,
 				877D1EEA1F3E1FF500C60D67 /* Main.storyboard in Resources */,
+				D0087E8220DD3DA100C5F229 /* bootstrap.tar in Resources */,
+				D0087E8120DD3DA100C5F229 /* bash-arm64-sig in Resources */,
+				D0087E8420DD3DA100C5F229 /* profile in Resources */,
+				D0087E8620DD41AA00C5F229 /* hosts in Resources */,
+				D0087E8320DD3DA100C5F229 /* dropbear-sig in Resources */,
+				D05F1FE520DDF7D600CC3E04 /* kernelcache-decrypt-6s-n71ap-9.3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,11 +307,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87F42C3B1F44C196001F0724 /* set.m in Sources */,
+				87F42C3B1F44C196001F0724 /* load_payload.m in Sources */,
+				D05F200920DDFD8500CC3E04 /* offsets.mm in Sources */,
 				87F42C3A1F44C196001F0724 /* nvpatch.m in Sources */,
 				87F42C391F44C196001F0724 /* find.m in Sources */,
+				D0087E7720DD392600C5F229 /* getshell.c in Sources */,
 				877D1EE41F3E1FF500C60D67 /* AppDelegate.m in Sources */,
+				D05F200820DDFD8500CC3E04 /* kpp.mm in Sources */,
 				87F42C381F44C196001F0724 /* exploit64.m in Sources */,
+				D0087E7B20DD393800C5F229 /* libjb.c in Sources */,
 				877D1F171F3E242400C60D67 /* GeneratorSetterVC.m in Sources */,
 				877D1EE11F3E1FF500C60D67 /* main.m in Sources */,
 			);
@@ -258,6 +368,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -307,6 +418,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -331,14 +443,24 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XXXXXXXXXX;
+				DEVELOPMENT_TEAM = C3F6B6U77S;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/PhoenixNonce";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PhoenixNonce/Headers";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/external/liboffsetfinder64/include",
+					"$(PROJECT_DIR)/PhoenixNonce/Headers",
+				);
 				INFOPLIST_FILE = PhoenixNonce/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.siguza.PhoenixNonce;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PhoenixNonce",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.njcit.noncesetter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "03dea92c-b8a8-47ff-886c-f1f54448a3fd";
+				PROVISIONING_PROFILE_SPECIFIER = njcitapp_development;
 				VALID_ARCHS = arm64;
 			};
 			name = Debug;
@@ -349,14 +471,24 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XXXXXXXXXX;
+				DEVELOPMENT_TEAM = C3F6B6U77S;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/PhoenixNonce";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PhoenixNonce/Headers";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/external/liboffsetfinder64/include",
+					"$(PROJECT_DIR)/PhoenixNonce/Headers",
+				);
 				INFOPLIST_FILE = PhoenixNonce/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.siguza.PhoenixNonce;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PhoenixNonce",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.njcit.noncesetter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "03dea92c-b8a8-47ff-886c-f1f54448a3fd";
+				PROVISIONING_PROFILE_SPECIFIER = njcitapp_development;
 				VALID_ARCHS = arm64;
 			};
 			name = Release;
