@@ -37,6 +37,7 @@
 
 // For '/' remount (not offsets)
 #define OFFSET_ROOT_MOUNT_V_NODE 0xffffff8004536070 // nm kernelcache-decrypt-6s-n71ap-9.3  | grep -E " _rootvnode$"
+#define OFFSET_TEXT_HEADER 0xFFFFFF8004004000 // IDA, go view -> open subviews -> segments and find the __TEXT:HEADER segment,the start should be FFFFFF8004004000
 
 
 int file_exist (char *filename)
@@ -47,11 +48,11 @@ int file_exist (char *filename)
 
 
 // remount root partition r/W
-int remount_rw(task_t tfp0) {
+int remount_rw(task_t tfp0, vm_address_t kbase) {
 
 	// prepare kernel r/w
 	prepare_rwk_via_tfp0(tfp0);
-	uint64_t rootfs_vnode = ReadAnywhere64(OFFSET_ROOT_MOUNT_V_NODE);
+	uint64_t rootfs_vnode = ReadAnywhere64(OFFSET_ROOT_MOUNT_V_NODE - OFFSET_TEXT_HEADER + kbase);
 	
 	struct utsname uts;
 	uname(&uts);
@@ -98,7 +99,7 @@ static int party_hard(void)
 		task_t kernel_task = get_kernel_task(&kbase);
 		LOG("kernel_task: 0x%x", kernel_task);
 		printf("kernel base:  0x%lx\n",kbase);
-		//remount_rw(kernel_task); //do not work, crashed, just commit now
+		remount_rw(kernel_task, kbase); //do not work, crashed, just commit now
 	 }
 	return ret;
 }
