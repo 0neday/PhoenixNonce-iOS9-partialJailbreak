@@ -60,11 +60,8 @@ int remount_rw(task_t tfp0) {
 	if (strstr(uts.version, "16.0.0")) {
 		off = 0xd0;
 	}
-	
 	uint64_t v_mount = ReadAnywhere64(rootfs_vnode+off);
-	
 	uint32_t v_flag = ReadAnywhere32(v_mount + 0x71);
-	
 	WriteAnywhere32(v_mount + 0x71, v_flag & (~(0x1<<6)));
 	
 	char* nmz = strdup("/dev/disk0s1s1");
@@ -101,7 +98,7 @@ static int party_hard(void)
 		task_t kernel_task = get_kernel_task(&kbase);
 		LOG("kernel_task: 0x%x", kernel_task);
 		printf("kernel base:  0x%lx\n",kbase);
-		//remount_rw(kernel_task);
+		//remount_rw(kernel_task); //do not work, crashed, just commit now
 	 }
 	return ret;
 }
