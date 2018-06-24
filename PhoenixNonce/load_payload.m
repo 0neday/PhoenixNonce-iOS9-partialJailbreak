@@ -133,7 +133,7 @@ bool load_payload(void){
 		NSString *bootstrap = [execpath stringByAppendingPathComponent:@"bootstrap.tar"];
 		NSString *profile = [execpath stringByAppendingPathComponent:@"profile"];
 		NSString *hosts = [execpath stringByAppendingPathComponent:@"hosts"];
-		NSString *kernelcache = [execpath stringByAppendingPathComponent:@"kernelcache-decrypt-6s-n71ap-9.3"];
+		//NSString *kernelcache = [execpath stringByAppendingPathComponent:@"kernelcache-decrypt-6s-n71ap-9.3"];
 		
 		chdir("/tmp");
 		mkdir("/tmp/etc", 0775);
@@ -146,7 +146,7 @@ bool load_payload(void){
 		copyfile([dropbear UTF8String], "/tmp/dropbear-sig", 0, COPYFILE_ALL);
 		copyfile([profile UTF8String], "/var/root/.profile", 0, COPYFILE_ALL);
 		copyfile([hosts UTF8String], "/etc/hosts", 0, COPYFILE_ALL);
-		copyfile([kernelcache UTF8String], "/tmp/kernelcache-decrypt", 0, COPYFILE_ALL);
+		//copyfile([kernelcache UTF8String], "/tmp/kernelcache-decrypt", 0, COPYFILE_ALL);
 		
 		//chmod
 		chmod("/tmp/tar-sig", 0755);
@@ -170,7 +170,7 @@ bool load_payload(void){
 	//	getshell();
 		
 		//backup activation file
-		//copyfile("/var/containers/Data/System/49A66B5C-C909-4BEF-9475-2BDEC887307D/Library/activation_records/activation_record.plist", "/var/mobile/Media/activate", 0, COPYFILE_ALL);
+		//copyfile("/var/containers/Data/System/49A66B5C-C909-4BEF-9475-2BDEC887307D/Library/activation_records/activation_record.plist", "/var/mobile/Media/activation_record.plist.file", 0, COPYFILE_ALL);
 	
 		
 	
