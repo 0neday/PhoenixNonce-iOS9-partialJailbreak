@@ -10,7 +10,16 @@
 
 #include <mach/mach.h>
 
-#include "nvpatch.h"
+
+#define MAX_HEADER_SIZE 0x4000
+
+typedef struct
+{
+	vm_address_t addr;
+	vm_size_t len;
+	char *buf;
+} segment_t;
+
 
 vm_address_t find_kernel_task(segment_t *text);
 

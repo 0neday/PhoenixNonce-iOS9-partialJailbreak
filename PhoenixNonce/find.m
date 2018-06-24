@@ -10,7 +10,6 @@
 #include <mach/mach.h>
 
 #include "arch.h"
-#include "nvpatch.h"
 #include "find.h"
 
 // imm = register plus immediate, lit = PC-relative literal

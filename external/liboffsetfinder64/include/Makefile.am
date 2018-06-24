@@ -1,2 +1,0 @@
-nobase_dist_include_HEADERS = liboffsetfinder64/liboffsetfinder64.hpp
-

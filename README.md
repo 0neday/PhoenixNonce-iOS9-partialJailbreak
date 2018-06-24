@@ -19,10 +19,6 @@ As always, use at your own risk.
 - Run the app & set your generator.
 - Restore with [futurerestore](https://github.com/tihmstar/futurerestore).
 
-### Decrypt 64bit kernelcache for n71ap iOS9.3
-
-find kernelcache keys from [here](https://www.theiphonewiki.com/wiki/Eagle_13E234_(iPhone8,1)) only for n71ap, then use xerub [img4](https://github.com/xerub/img4tool) to decrypt
-
 ### License
 
 [MIT](https://github.com/Siguza/PhoenixNonce/blob/master/LICENSE).

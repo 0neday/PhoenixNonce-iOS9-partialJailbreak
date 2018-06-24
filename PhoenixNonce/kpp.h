@@ -1,14 +1,18 @@
 //
-//  jailbreak.h
-//  doubleH3lix
+//  kpp.h
+//  PhoenixNonce
 //
-//  Created by tihmstar on 18.02.18.
+//  Created by hongs on 2018/6/24.
 //  Copyright © 2018 tihmstar. All rights reserved.
 //
 
 #ifndef kpp_h
 #define kpp_h
 
-int kpp_init(uint64_t kernbase, uint64_t slide);
+void prepare_rwk_via_tfp0(mach_port_t port);
+uint64_t ReadAnywhere64(uint64_t addr);
+uint64_t WriteAnywhere64(uint64_t addr, uint64_t val);
+uint32_t ReadAnywhere32(uint64_t addr);
+uint64_t WriteAnywhere32(uint64_t addr, uint32_t val);
 
-#endif /* jailbreak_h */
+#endif /* kpp_h */
