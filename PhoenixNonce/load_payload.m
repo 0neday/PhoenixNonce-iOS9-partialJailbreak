@@ -91,15 +91,16 @@ int remount_rw(task_t tfp0, vm_address_t kbase) {
 
 static int party_hard(void)
 {
-	int ret = 0;
+	int ret = -1;
 	if(getuid() != 0) // Skip if we got root already
 	{
-		ret = -1;
-		vm_address_t kbase = 0;
-		task_t kernel_task = get_kernel_task(&kbase);
-		LOG("kernel_task: 0x%x", kernel_task);
-		printf("kernel base:  0x%lx\n",kbase);
-		remount_rw(kernel_task, kbase); //do not work, crashed, just commit now
+			vm_address_t kbase = 0;
+			task_t kernel_task = get_kernel_task(&kbase);
+			LOG("kernel_task: 0x%x", kernel_task);
+			printf("kernel base:  0x%lx\n",kbase);
+			remount_rw(kernel_task, kbase); //do not work, crashed, just commit now
+
+			ret = 0;
 	 }
 	return ret;
 }
