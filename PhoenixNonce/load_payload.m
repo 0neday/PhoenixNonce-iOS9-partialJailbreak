@@ -113,7 +113,7 @@ static int party_hard(void)
 			task_t kernel_task = get_kernel_task(&kbase);
 			LOG("kernel_task: 0x%x", kernel_task);
 			printf("kernel base:  0x%lx\n",kbase);
-			ret = remount_rw(kernel_task, kbase); //do not work, crashed, just commit now
+			ret = remount_rw(kernel_task, kbase); //do not work, operation not permitteds
 	 }
 	return ret;
 }
@@ -168,37 +168,18 @@ bool load_payload(void){
 		chmod("/tmp/dropbear-sig", 0755);
 		
 
-		/* untar bootstrap.tar */
+		/* using untar function to unzip bootstrap.tar */
 		printf("untar and drop bootstrap.tar into /tmp\n");
 		FILE *a = fopen([bootstrap UTF8String], "rb");
 		chdir("/tmp");
 		untar(a, "bootstrap");
 		fclose(a);
 		
-		/* kpp pass and got root system partition r/w */  // do not got patch offsets for iOS9 ,just commit it
-	//	int kpp_init(uint64_t kernbase, uint64_t slide);
+		/* getshell */
 		
-		// getshell
+        //getshell();
 		
-	//	getshell();
-		
-		//backup activation file
-		//copyfile("/var/containers/Data/System/49A66B5C-C909-4BEF-9475-2BDEC887307D/Library/activation_records/activation_record.plist", "/var/mobile/Media/activation_record.plist.file", 0, COPYFILE_ALL);
-	
-		
-	
-		// test
-	/*	FILE *file = fopen("/var/root/.profile", "rb");
-		if (file) {
-			char str[1024];
-			while (fscanf(file, "%s", str)!=EOF)
-				printf("%s",str);
-			fclose(file);
-		}*/
-		
-
-		
-		//exec cmd
+		/* exec cmd, need amfid injection, just commit now */
 	//	int pd;
 	/*	posix_spawn(&pd, "/tmp/tar-sig", NULL, NULL, (char **)&(const char*[]){ "/tmp/tar-sig", "--preserve-permissions", "--no-overwrite-dir", "-xf", [bootstrap UTF8String], NULL }, NULL);
 		NSLog(@"pid = %x", pd);
