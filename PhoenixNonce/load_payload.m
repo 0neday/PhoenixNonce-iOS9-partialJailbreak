@@ -39,6 +39,9 @@
 #define OFFSET_ROOT_MOUNT_V_NODE 0xffffff8004536070 // nm kernelcache-decrypt-6s-n71ap-9.3  | grep -E " _rootvnode$"
 #define OFFSET_TEXT_HEADER 0xFFFFFF8004004000 // IDA, go view -> open subviews -> segments and find the __TEXT:HEADER segment,the start should be FFFFFF8004004000
 
+#define KSTRUCT_OFFSET_MOUNT_MNT_FLAG   0x70
+#define KSTRUCT_OFFSET_VNODE_V_UN       0xd8
+
 
 int file_exist (char *filename)
 {
@@ -74,14 +77,14 @@ int remount_rw(task_t tfp0, vm_address_t kbase) {
 	prepare_rwk_via_tfp0(tfp0);
 	
 	//read rootfs_vnode from memory
-	uint64_t rootfs_vnode = ReadAnywhere64(OFFSET_ROOT_MOUNT_V_NODE - OFFSET_TEXT_HEADER + kbase);
-	vm_offset_t vmount_offset = 0xd0;
-	vm_offset_t vflag_offset = 0x71;
+    uint64_t kslide = kbase - OFFSET_TEXT_HEADER;
+    uint64_t _rootnode = OFFSET_ROOT_MOUNT_V_NODE + kslide;
+	uint64_t rootfs_vnode = ReadAnywhere64(_rootnode);
 	
     // remove mnt_rootfs flag
-	uint64_t v_mount = ReadAnywhere64(rootfs_vnode + vmount_offset);
-	uint32_t v_flag = ReadAnywhere32(v_mount + vflag_offset);
-	WriteAnywhere32(v_mount + vflag_offset, v_flag & ~(1 << 6));
+	uint64_t v_mount = ReadAnywhere64(rootfs_vnode + KSTRUCT_OFFSET_VNODE_V_UN);
+	uint32_t v_flag = ReadAnywhere32(v_mount + KSTRUCT_OFFSET_MOUNT_MNT_FLAG + 1);
+	WriteAnywhere32(v_mount + KSTRUCT_OFFSET_MOUNT_MNT_FLAG + 1, v_flag & ~(MNT_ROOTFS << 6));
     
 	// remount it
 	char* nmz = strdup("/dev/disk0s1s1");
@@ -89,9 +92,10 @@ int remount_rw(task_t tfp0, vm_address_t kbase) {
 	printf("RC: %d (flags: 0x%x) %s \n", rv, v_flag, strerror(errno));
 	
     // set it back
-	v_mount = ReadAnywhere64(rootfs_vnode + vmount_offset);
-	WriteAnywhere32(v_mount + vflag_offset, v_flag);
+	v_mount = ReadAnywhere64(rootfs_vnode + KSTRUCT_OFFSET_VNODE_V_UN);
+	WriteAnywhere32(v_mount + KSTRUCT_OFFSET_MOUNT_MNT_FLAG + 1, v_flag);
 	
+    // check r/w on /
 	int fd = open("/.bit_of_fun", O_RDONLY);
 	if (fd == -1) {
 		fd = creat("/.bit_of_fun", 0644);
