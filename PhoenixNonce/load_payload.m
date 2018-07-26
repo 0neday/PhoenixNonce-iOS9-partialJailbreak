@@ -34,6 +34,7 @@
 
 
 #include "kpp.h"
+#include "kernel_utils.h"
 
 // For '/' remount (not offsets)
 #define OFFSET_ROOT_MOUNT_V_NODE 0xffffff8004536070 // nm kernelcache-decrypt-6s-n71ap-9.3  | grep -E " _rootvnode$"
@@ -113,11 +114,14 @@ static int party_hard(void)
 	int ret = -1;
 	if(getuid() != 0) // Skip if we got root already
 	{
-			vm_address_t kbase = 0;
-			task_t kernel_task = get_kernel_task(&kbase);
+            vm_address_t kernel_base = 0;
+            // get tfp0
+			task_t kernel_task = get_kernel_task();
 			LOG("kernel_task: 0x%x", kernel_task);
-			printf("kernel base:  0x%lx\n",kbase);
-			ret = remount_rw(kernel_task, kbase); //do not work, operation not permitteds
+            // find kernel base
+            kernel_base = find_kernel_base(kernel_task);
+            printf("kernel base:  0x%lx\n",kernel_base);
+			ret = remount_rw(kernel_task, kernel_base); //do not work, operation not permitteds
 	 }
 	return ret;
 }

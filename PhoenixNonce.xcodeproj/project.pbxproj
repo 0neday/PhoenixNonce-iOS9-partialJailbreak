@@ -17,6 +17,7 @@
 		87F42C381F44C196001F0724 /* exploit64.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F42C301F44C196001F0724 /* exploit64.m */; };
 		87F42C391F44C196001F0724 /* find.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F42C321F44C196001F0724 /* find.m */; };
 		87F42C3B1F44C196001F0724 /* load_payload.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F42C371F44C196001F0724 /* load_payload.m */; };
+		D0020647210A84B000DFF623 /* kernel_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = D0020646210A84B000DFF623 /* kernel_utils.c */; };
 		D002967B20DF6D4800B11691 /* kpp.c in Sources */ = {isa = PBXBuildFile; fileRef = D002967A20DF6D4800B11691 /* kpp.c */; };
 		D0087E7720DD392600C5F229 /* getshell.c in Sources */ = {isa = PBXBuildFile; fileRef = D0087E7520DD392600C5F229 /* getshell.c */; };
 		D0087E7B20DD393800C5F229 /* libjb.c in Sources */ = {isa = PBXBuildFile; fileRef = D0087E7920DD393800C5F229 /* libjb.c */; };
@@ -47,6 +48,8 @@
 		87F42C331F44C196001F0724 /* mach-o.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mach-o.h"; sourceTree = "<group>"; };
 		87F42C361F44C196001F0724 /* load_payload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = load_payload.h; sourceTree = "<group>"; };
 		87F42C371F44C196001F0724 /* load_payload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = load_payload.m; sourceTree = "<group>"; };
+		D0020645210A84B000DFF623 /* kernel_utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kernel_utils.h; sourceTree = "<group>"; };
+		D0020646210A84B000DFF623 /* kernel_utils.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kernel_utils.c; sourceTree = "<group>"; };
 		D002967620DF6A2700B11691 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
 		D002967920DF6A8300B11691 /* kpp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kpp.h; sourceTree = "<group>"; };
 		D002967A20DF6D4800B11691 /* kpp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kpp.c; sourceTree = "<group>"; };
@@ -84,6 +87,8 @@
 				87F42C331F44C196001F0724 /* mach-o.h */,
 				87F42C361F44C196001F0724 /* load_payload.h */,
 				87F42C371F44C196001F0724 /* load_payload.m */,
+				D0020645210A84B000DFF623 /* kernel_utils.h */,
+				D0020646210A84B000DFF623 /* kernel_utils.c */,
 			);
 			name = Exploit;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				87F42C391F44C196001F0724 /* find.m in Sources */,
 				D0087E7720DD392600C5F229 /* getshell.c in Sources */,
 				877D1EE41F3E1FF500C60D67 /* AppDelegate.m in Sources */,
+				D0020647210A84B000DFF623 /* kernel_utils.c in Sources */,
 				87F42C381F44C196001F0724 /* exploit64.m in Sources */,
 				D0087E7B20DD393800C5F229 /* libjb.c in Sources */,
 				D002967B20DF6D4800B11691 /* kpp.c in Sources */,
