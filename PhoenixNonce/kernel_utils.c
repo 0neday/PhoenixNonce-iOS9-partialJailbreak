@@ -11,6 +11,8 @@
 #include <sys/utsname.h>
 #include <stdlib.h>
 
+#include "kernel_utils.h"
+
 
 // https://github.com/JonathanSeals/kernelversionhacker/blob/master/kernelversionhacker.c
 
@@ -84,4 +86,34 @@ vm_address_t find_kernel_base(mach_port_t kernel_task) {
     
     printf("ERROR: Failed to find kernel base.\n");
     exit(1);
+}
+
+
+uint64_t find_proc_by_name(char* name, uintptr_t kern_proc_addr) {
+    uint64_t proc = kread64(kern_proc_addr + 0x08);
+    
+    while (proc) {
+        char proc_name[40] = { 0 };
+        
+        kread(proc + 0x26c, proc_name, 40);
+        
+        if (!strcmp(name, proc_name)) {
+            return proc;
+        }
+        
+        proc = kread64(proc + 0x08);
+    }
+    
+    return 0;
+}
+
+int patchContainermanagerd(uintptr_t kern_kauth_cred_addr, uintptr_t kern_proc_addr) {
+    uint64_t cmgr = find_proc_by_name("containermanager", kern_proc_addr);
+    if (cmgr == 0) {
+        printf("unable to find containermanager!\n");
+        return 1;
+    }
+    
+    kwrite64(cmgr + 0x100, kern_kauth_cred_addr);
+    return 0;
 }
