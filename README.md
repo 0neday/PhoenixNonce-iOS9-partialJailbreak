@@ -1,4 +1,4 @@
-# partialJailbreak
+# partialJailbreak 
 
 
 
@@ -7,11 +7,16 @@
 - git clone https://github.com/0neday/PhoenixNonce-iOS9-partialJailbreak
 - Use xcode to compile and install
 - Just for developer to research 
+- Just for iOS 9.0 - 9.3.5  64bit
 
 ### Decrypt 64bit kernelcache for N71AP iOS 9.3
  	 
  - Find kernelcache keys from [here](https://www.theiphonewiki.com/wiki/Eagle_13E234_(iPhone8,1)) only for n71ap, 
  - Use xerub [img4](https://github.com/xerub/img4tool) to decrypt	 kernelcache.
+
+### Issues
+- libpatchfinder64 don't support iOS <10, so you need to patch libpatchfinder64 for patch kernel.
+- miss some kernel structure offsets to remount root partition as r/w or patch amfid (kppless approach). you need to check xnu version of [apple open source](https://opensource.apple.com/source/xnu/)depend on your iOS version
 
 
 ### License
