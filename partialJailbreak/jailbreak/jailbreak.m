@@ -183,6 +183,9 @@ bool jailbreak(void){
         chmod("/tmp/bash-arm64-sig", 0755);
         chmod("/tmp/dropbear-sig", 0755);
         
+        //inject amfid
+        //inject_trust("tmp/bash-arm64-sig");
+        //inject_trust("/tmp/dropbear-sig");
         
         /* using untar function to unzip bootstrap.tar */
         printf("untar and drop bootstrap.tar into /tmp\n");
@@ -204,7 +207,8 @@ bool jailbreak(void){
          */
         
         //launch dropbear
-        /*posix_spawn(&pd, "/tmp/dropbear-sig", NULL, NULL, (char **)&(const char*[]){ "/tmp/dropbear-sig", "-RE", "-p", "127.0.0.1:2222",NULL }, NULL);
+        /*
+         posix_spawn(&pd, "/tmp/dropbear-sig", NULL, NULL, (char **)&(const char*[]){ "/tmp/dropbear-sig", "-RE", "-p", "127.0.0.1:2222",NULL }, NULL);
          NSLog(@"pid = %x", pd);
          waitpid(pd, NULL, 0);
          */
