@@ -37,7 +37,8 @@
 
 
 #include "kppless.h"
-#include "kppless.h"
+#include "amfi.h"
+#include "patchfinder64.h"
 
 // For '/' remount (not offsets)
 #define OFFSET_ROOT_MOUNT_V_NODE 0xffffff8004536070 // nm kernelcache-decrypt-6s-n71ap-9.3  | grep -E " _rootvnode$"
@@ -124,7 +125,11 @@ static int party_hard(void)
         // find kernel base
         kernel_base = find_kernel_base(kernel_task);
         printf("kernel base:  0x%lx\n", kernel_base);
-        ret = remount_rw(kernel_task, kernel_base); //do not work, operation not permitteds
+        // initialize patchfinder64 & amfi stuff, need to patch for iOS < 10, just commit now
+        // init_patchfinder(NULL, kernel_base);
+        // init_amfi();
+        // remount root partition as r/w
+        ret = remount_rw(kernel_task, kernel_base); //do not work, operation not permitted
     }
     return ret;
 }
