@@ -53,10 +53,7 @@ double uptime(void);
 
 - (IBAction)go:(id)sender {
     if(jailbreak() == 0){
-        //bool isFileExist = file_exist("/.bit_of_fun") ? 0 : -1;
-        if(file_exist("/.bit_of_fun") == 0){
-            [self.notfiyLabel setText:@"Did we mount / as read+write? no\n"];
-        }
+        [self.notfiyLabel setText:[NSString stringWithFormat:@"Did we mount / as read+write? %s\n", file_exist("/.bit_of_fun") ? "yes" : "no"]];
     }
     else
         [self.notfiyLabel setText:@"Failed!"];
