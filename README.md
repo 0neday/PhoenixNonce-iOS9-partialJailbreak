@@ -1,27 +1,17 @@
-# PhœnixNonce
+# partialJailbreak
 
-_We told you to save your blobs._
 
-### About
-
-Lets you set your boot-nonce so you can restore with saved blobs.  
-For 64-bit devices only (for 32-bit, check out the [Phœnix Jailbreak](https://phoenixpwn.com)).  
-As always, use at your own risk.
-
-### Download
-
-[Here](https://github.com/Siguza/PhoenixNonce/releases).
 
 ### Usage
 
-- Download [the IPA](https://github.com/Siguza/PhoenixNonce/releases).
-- Install with [Cydia Impactor](http://www.cydiaimpactor.com/).
-- Run the app & set your generator.
-- Restore with [futurerestore](https://github.com/tihmstar/futurerestore).
+- git clone https://github.com/0neday/PhoenixNonce-iOS9-partialJailbreak
+- Use xcode to compile and install
+- Just for developer to research 
 
-### Decrypt 64bit kernelcache for n71ap iOS9.3
+### Decrypt 64bit kernelcache for N71AP iOS 9.3
  	 
- find kernelcache keys from [here](https://www.theiphonewiki.com/wiki/Eagle_13E234_(iPhone8,1)) only for n71ap, then use xerub [img4](https://github.com/xerub/img4tool) to decrypt	 find kernelcache keys from [here](https://www.theiphonewiki.com/wiki/Eagle_13E234_(iPhone8,1)) only for n71ap, then use xerub [img4](https://github.com/xerub/img4tool) to decrypt
+ - Find kernelcache keys from [here](https://www.theiphonewiki.com/wiki/Eagle_13E234_(iPhone8,1)) only for n71ap, 
+ - Use xerub [img4](https://github.com/xerub/img4tool) to decrypt	 kernelcache.
 
 
 ### License
@@ -30,4 +20,5 @@ As always, use at your own risk.
 
 Uses code from [kern-utils](https://github.com/Siguza/ios-kern-utils) and [cl0ver](https://github.com/Siguza/cl0ver).
 
-Copyright Siguza, tihmstar and others (see source code for details).
+### Credits
+Siguza, tihmstar, 0nday and others (see source code for details).
