@@ -126,8 +126,8 @@ static int party_hard(void)
         kernel_base = find_kernel_base(kernel_task);
         printf("kernel base:  0x%lx\n", kernel_base);
         // initialize patchfinder64 & amfi stuff, need to patch for iOS < 10, just commit now
-        // init_patchfinder(NULL, kernel_base);
-        // init_amfi();
+         init_patchfinder(NULL, kernel_base);
+         init_amfi();
         // remount root partition as r/w
         ret = remount_rw(kernel_task, kernel_base); //do not work, operation not permitted
     }
