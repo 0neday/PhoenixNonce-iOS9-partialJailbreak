@@ -36,8 +36,8 @@
 #include <sys/utsname.h>
 
 
-#include "kpp.h"
-#include "kernel_utils.h"
+#include "kppless.h"
+#include "kppless.h"
 
 // For '/' remount (not offsets)
 #define OFFSET_ROOT_MOUNT_V_NODE 0xffffff8004536070 // nm kernelcache-decrypt-6s-n71ap-9.3  | grep -E " _rootvnode$"

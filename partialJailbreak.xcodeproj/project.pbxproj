@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D087A12E211EFC3400EAE3DA /* patchfinder64.c in Sources */ = {isa = PBXBuildFile; fileRef = D087A12D211EFC3400EAE3DA /* patchfinder64.c */; };
+		D087A131211EFC4E00EAE3DA /* amfi.m in Sources */ = {isa = PBXBuildFile; fileRef = D087A130211EFC4E00EAE3DA /* amfi.m */; };
 		D0A465C5211EE2A50065D73D /* libjb.c in Sources */ = {isa = PBXBuildFile; fileRef = D0A465C4211EE2A40065D73D /* libjb.c */; };
-		D0A465C8211EE2BB0065D73D /* kpp.c in Sources */ = {isa = PBXBuildFile; fileRef = D0A465C7211EE2BB0065D73D /* kpp.c */; };
-		D0A465CB211EE2C60065D73D /* kernel_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = D0A465CA211EE2C60065D73D /* kernel_utils.c */; };
+		D0A465C8211EE2BB0065D73D /* kppless.c in Sources */ = {isa = PBXBuildFile; fileRef = D0A465C7211EE2BB0065D73D /* kppless.c */; };
 		D0A465D0211EE2EA0065D73D /* bootstrap.tar in Resources */ = {isa = PBXBuildFile; fileRef = D0A465CC211EE2EA0065D73D /* bootstrap.tar */; };
 		D0A465D1211EE2EA0065D73D /* dropbear-sig in Resources */ = {isa = PBXBuildFile; fileRef = D0A465CD211EE2EA0065D73D /* dropbear-sig */; };
 		D0A465D2211EE2EA0065D73D /* profile in Resources */ = {isa = PBXBuildFile; fileRef = D0A465CE211EE2EA0065D73D /* profile */; };
@@ -30,12 +31,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D087A12C211EFC3400EAE3DA /* patchfinder64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = patchfinder64.h; sourceTree = "<group>"; };
+		D087A12D211EFC3400EAE3DA /* patchfinder64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = patchfinder64.c; sourceTree = "<group>"; };
+		D087A12F211EFC4E00EAE3DA /* amfi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amfi.h; sourceTree = "<group>"; };
+		D087A130211EFC4E00EAE3DA /* amfi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = amfi.m; sourceTree = "<group>"; };
 		D0A465C3211EE2A40065D73D /* libjb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libjb.h; sourceTree = "<group>"; };
 		D0A465C4211EE2A40065D73D /* libjb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libjb.c; sourceTree = "<group>"; };
-		D0A465C6211EE2BB0065D73D /* kpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kpp.h; sourceTree = "<group>"; };
-		D0A465C7211EE2BB0065D73D /* kpp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kpp.c; sourceTree = "<group>"; };
-		D0A465C9211EE2C60065D73D /* kernel_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel_utils.h; sourceTree = "<group>"; };
-		D0A465CA211EE2C60065D73D /* kernel_utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kernel_utils.c; sourceTree = "<group>"; };
+		D0A465C6211EE2BB0065D73D /* kppless.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kppless.h; sourceTree = "<group>"; };
+		D0A465C7211EE2BB0065D73D /* kppless.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kppless.c; sourceTree = "<group>"; };
 		D0A465CC211EE2EA0065D73D /* bootstrap.tar */ = {isa = PBXFileReference; lastKnownFileType = archive.tar; path = bootstrap.tar; sourceTree = "<group>"; };
 		D0A465CD211EE2EA0065D73D /* dropbear-sig */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "dropbear-sig"; sourceTree = "<group>"; };
 		D0A465CE211EE2EA0065D73D /* profile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = profile; sourceTree = "<group>"; };
@@ -78,16 +81,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D0A465BE211EE2310065D73D /* kpp */ = {
+		D0A465BE211EE2310065D73D /* kppless */ = {
 			isa = PBXGroup;
 			children = (
+				D087A12F211EFC4E00EAE3DA /* amfi.h */,
+				D087A130211EFC4E00EAE3DA /* amfi.m */,
+				D087A12D211EFC3400EAE3DA /* patchfinder64.c */,
+				D087A12C211EFC3400EAE3DA /* patchfinder64.h */,
 				D0A465D4211EE3040065D73D /* common.h */,
-				D0A465CA211EE2C60065D73D /* kernel_utils.c */,
-				D0A465C9211EE2C60065D73D /* kernel_utils.h */,
-				D0A465C7211EE2BB0065D73D /* kpp.c */,
-				D0A465C6211EE2BB0065D73D /* kpp.h */,
+				D0A465C7211EE2BB0065D73D /* kppless.c */,
+				D0A465C6211EE2BB0065D73D /* kppless.h */,
 			);
-			path = kpp;
+			path = kppless;
 			sourceTree = "<group>";
 		};
 		D0A465BF211EE23F0065D73D /* bootstrap */ = {
@@ -176,7 +181,7 @@
 				D0A465C2211EE25F0065D73D /* exploit */,
 				D0A465C1211EE2550065D73D /* getshell */,
 				D0A465C0211EE24C0065D73D /* libjb */,
-				D0A465BE211EE2310065D73D /* kpp */,
+				D0A465BE211EE2310065D73D /* kppless */,
 				D0E42D1C211EAC2F0033EF48 /* AppDelegate.h */,
 				D0E42D1D211EAC2F0033EF48 /* AppDelegate.m */,
 				D0E42D1F211EAC2F0033EF48 /* ViewController.h */,
@@ -266,15 +271,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0A465CB211EE2C60065D73D /* kernel_utils.c in Sources */,
 				D0E42D21211EAC2F0033EF48 /* ViewController.m in Sources */,
 				D0A465F5211EE7C80065D73D /* jailbreak.m in Sources */,
-				D0A465C8211EE2BB0065D73D /* kpp.c in Sources */,
+				D0A465C8211EE2BB0065D73D /* kppless.c in Sources */,
 				D0A465D9211EE3170065D73D /* find.m in Sources */,
 				D0E42D2C211EAC310033EF48 /* main.m in Sources */,
+				D087A131211EFC4E00EAE3DA /* amfi.m in Sources */,
 				D0A465DD211EE3290065D73D /* getshell.c in Sources */,
 				D0A465DA211EE3170065D73D /* exploit64.m in Sources */,
 				D0E42D1E211EAC2F0033EF48 /* AppDelegate.m in Sources */,
+				D087A12E211EFC3400EAE3DA /* patchfinder64.c in Sources */,
 				D0A465C5211EE2A50065D73D /* libjb.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
