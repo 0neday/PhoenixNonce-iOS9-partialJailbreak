@@ -16,7 +16,7 @@
 
 ### Issues
 - libpatchfinder64 don't support iOS <10, so you need to patch libpatchfinder64 for patch kernel.
-- miss some kernel structure offsets to remount root partition as r/w or patch amfid (kppless approach). you need to check xnu version of [apple open source](https://opensource.apple.com/source/xnu/)depend on your iOS version
+- miss some kernel structure offsets to remount root partition as r/w or patch amfid (kppless approach). you need to check xnu version of [apple open source](https://opensource.apple.com/source/xnu/) depend on your iOS version
 
 
 ### License
