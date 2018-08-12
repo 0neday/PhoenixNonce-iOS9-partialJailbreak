@@ -33,7 +33,7 @@ double uptime(void);
         [self.jailbreakButton setEnabled:NO];
         while ((waitTime = 90 - uptime()) > 0) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.jailbreakButton setTitle:[NSString stringWithFormat:@"wait: %ds", waitTime] forState:UIControlStateNormal];
+                [self.jailbreakButton setTitle:[NSString stringWithFormat:@"wait: %d", waitTime] forState:UIControlStateNormal];
             });
             sleep(1);
         }
@@ -53,10 +53,11 @@ double uptime(void);
 
 - (IBAction)go:(id)sender {
     if(jailbreak() == 0){
-        [self.notfiyLabel setText:[NSString stringWithFormat:@"Did we mount / as read+write? %s\n", file_exist("/.bit_of_fun") ? "yes" : "no"]];
+        [self.notfiyLabel setText:[NSString stringWithFormat:@"Did we mount / as read + write? %s\n", file_exist("/.bit_of_fun") ? "yes" : "no"]];
     }
     else
         [self.notfiyLabel setText:@"Failed!"];
+    [self.jailbreakButton setEnabled:NO];
 }
 
 

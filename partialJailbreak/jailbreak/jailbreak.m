@@ -108,7 +108,7 @@ int remount_rw(task_t tfp0, vm_address_t kbase) {
         printf("File already exists!\n");
     }
     close(fd);
-    printf("Did we mount / as read+write? %s\n", file_exist("/.bit_of_fun") ? "yes" : "no");
+    printf("Did we mount / as read + write? %s\n", file_exist("/.bit_of_fun") ? "yes" : "no");
     return rv;
 }
 
@@ -124,7 +124,7 @@ static int party_hard(void)
         LOG("kernel_task: 0x%x", kernel_task);
         // find kernel base
         kernel_base = find_kernel_base(kernel_task);
-        printf("kernel base:  0x%lx\n", kernel_base);
+        printf("kernel base:  0x%x\n", kernel_base);
         // initialize patchfinder64 & amfi stuff, need to patch for iOS < 10, just commit now
          init_patchfinder(NULL, kernel_base);
          init_amfi();
