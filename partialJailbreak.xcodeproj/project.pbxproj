@@ -7,18 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0353D402127D5DA0075DC80 /* tar-sig in Resources */ = {isa = PBXBuildFile; fileRef = D0353D3F2127D5DA0075DC80 /* tar-sig */; };
+		D0419DB0212BED1F005C4F08 /* hosts in Resources */ = {isa = PBXBuildFile; fileRef = D0419DAF212BED1F005C4F08 /* hosts */; };
+		D053B4D0221C3F9D00E7D73E /* libmis.c in Sources */ = {isa = PBXBuildFile; fileRef = D053B4CF221C3F9D00E7D73E /* libmis.c */; };
+		D0598770221D4E8400C5CBE6 /* patchfinder64.o in Frameworks */ = {isa = PBXBuildFile; fileRef = D059876F221D4E8400C5CBE6 /* patchfinder64.o */; };
+		D083C474212E972F00DDB7E6 /* bootstrap.tar in Resources */ = {isa = PBXBuildFile; fileRef = D083C473212E972F00DDB7E6 /* bootstrap.tar */; };
 		D087A12E211EFC3400EAE3DA /* patchfinder64.c in Sources */ = {isa = PBXBuildFile; fileRef = D087A12D211EFC3400EAE3DA /* patchfinder64.c */; };
 		D087A131211EFC4E00EAE3DA /* amfi.m in Sources */ = {isa = PBXBuildFile; fileRef = D087A130211EFC4E00EAE3DA /* amfi.m */; };
 		D0A465C5211EE2A50065D73D /* libjb.c in Sources */ = {isa = PBXBuildFile; fileRef = D0A465C4211EE2A40065D73D /* libjb.c */; };
 		D0A465C8211EE2BB0065D73D /* kppless.c in Sources */ = {isa = PBXBuildFile; fileRef = D0A465C7211EE2BB0065D73D /* kppless.c */; };
-		D0A465D0211EE2EA0065D73D /* bootstrap.tar in Resources */ = {isa = PBXBuildFile; fileRef = D0A465CC211EE2EA0065D73D /* bootstrap.tar */; };
 		D0A465D1211EE2EA0065D73D /* dropbear-sig in Resources */ = {isa = PBXBuildFile; fileRef = D0A465CD211EE2EA0065D73D /* dropbear-sig */; };
 		D0A465D2211EE2EA0065D73D /* profile in Resources */ = {isa = PBXBuildFile; fileRef = D0A465CE211EE2EA0065D73D /* profile */; };
 		D0A465D3211EE2EA0065D73D /* bash-arm64-sig in Resources */ = {isa = PBXBuildFile; fileRef = D0A465CF211EE2EA0065D73D /* bash-arm64-sig */; };
 		D0A465D9211EE3170065D73D /* find.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A465D7211EE3170065D73D /* find.m */; };
 		D0A465DA211EE3170065D73D /* exploit64.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A465D8211EE3170065D73D /* exploit64.m */; };
 		D0A465DD211EE3290065D73D /* getshell.c in Sources */ = {isa = PBXBuildFile; fileRef = D0A465DC211EE3290065D73D /* getshell.c */; };
-		D0A465E0211EE3360065D73D /* hosts in Resources */ = {isa = PBXBuildFile; fileRef = D0A465DE211EE3350065D73D /* hosts */; };
 		D0A465E1211EE3360065D73D /* kernelcache-decrypt-6s-n71ap-9.3 in Resources */ = {isa = PBXBuildFile; fileRef = D0A465DF211EE3350065D73D /* kernelcache-decrypt-6s-n71ap-9.3 */; };
 		D0A465E9211EE3C30065D73D /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0A465E8211EE3C30065D73D /* IOKit.framework */; };
 		D0A465F5211EE7C80065D73D /* jailbreak.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A465F4211EE7C80065D73D /* jailbreak.m */; };
@@ -31,6 +34,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D0353D3F2127D5DA0075DC80 /* tar-sig */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "tar-sig"; sourceTree = "<group>"; };
+		D0419DAF212BED1F005C4F08 /* hosts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hosts; sourceTree = "<group>"; };
+		D053B4CE221C3F9D00E7D73E /* libmis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libmis.h; sourceTree = "<group>"; };
+		D053B4CF221C3F9D00E7D73E /* libmis.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = libmis.c; sourceTree = "<group>"; };
+		D059876E221D4E7700C5CBE6 /* patchfinder64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = patchfinder64.h; sourceTree = "<group>"; };
+		D059876F221D4E8400C5CBE6 /* patchfinder64.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = patchfinder64.o; sourceTree = "<group>"; };
+		D083C473212E972F00DDB7E6 /* bootstrap.tar */ = {isa = PBXFileReference; lastKnownFileType = archive.tar; path = bootstrap.tar; sourceTree = "<group>"; };
 		D087A12C211EFC3400EAE3DA /* patchfinder64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = patchfinder64.h; sourceTree = "<group>"; };
 		D087A12D211EFC3400EAE3DA /* patchfinder64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = patchfinder64.c; sourceTree = "<group>"; };
 		D087A12F211EFC4E00EAE3DA /* amfi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amfi.h; sourceTree = "<group>"; };
@@ -39,7 +49,6 @@
 		D0A465C4211EE2A40065D73D /* libjb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libjb.c; sourceTree = "<group>"; };
 		D0A465C6211EE2BB0065D73D /* kppless.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kppless.h; sourceTree = "<group>"; };
 		D0A465C7211EE2BB0065D73D /* kppless.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kppless.c; sourceTree = "<group>"; };
-		D0A465CC211EE2EA0065D73D /* bootstrap.tar */ = {isa = PBXFileReference; lastKnownFileType = archive.tar; path = bootstrap.tar; sourceTree = "<group>"; };
 		D0A465CD211EE2EA0065D73D /* dropbear-sig */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "dropbear-sig"; sourceTree = "<group>"; };
 		D0A465CE211EE2EA0065D73D /* profile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = profile; sourceTree = "<group>"; };
 		D0A465CF211EE2EA0065D73D /* bash-arm64-sig */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "bash-arm64-sig"; sourceTree = "<group>"; };
@@ -50,7 +59,6 @@
 		D0A465D8211EE3170065D73D /* exploit64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = exploit64.m; sourceTree = "<group>"; };
 		D0A465DB211EE3280065D73D /* getshell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getshell.h; sourceTree = "<group>"; };
 		D0A465DC211EE3290065D73D /* getshell.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = getshell.c; sourceTree = "<group>"; };
-		D0A465DE211EE3350065D73D /* hosts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hosts; sourceTree = "<group>"; };
 		D0A465DF211EE3350065D73D /* kernelcache-decrypt-6s-n71ap-9.3 */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "kernelcache-decrypt-6s-n71ap-9.3"; sourceTree = "<group>"; };
 		D0A465E2211EE3500065D73D /* mach-o.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mach-o.h"; sourceTree = "<group>"; };
 		D0A465E8211EE3C30065D73D /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = "../PhoenixNonce-iOS9-partialJailbreak/PhoenixNonce/IOKit.framework"; sourceTree = "<group>"; };
@@ -74,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0598770221D4E8400C5CBE6 /* patchfinder64.o in Frameworks */,
 				D0A465E9211EE3C30065D73D /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,6 +90,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D053B4BB221C202700E7D73E /* amfid */ = {
+			isa = PBXGroup;
+			children = (
+				D059876F221D4E8400C5CBE6 /* patchfinder64.o */,
+				D059876E221D4E7700C5CBE6 /* patchfinder64.h */,
+				D053B4CE221C3F9D00E7D73E /* libmis.h */,
+				D053B4CF221C3F9D00E7D73E /* libmis.c */,
+			);
+			path = amfid;
+			sourceTree = "<group>";
+		};
 		D0A465BE211EE2310065D73D /* kppless */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,11 +118,12 @@
 		D0A465BF211EE23F0065D73D /* bootstrap */ = {
 			isa = PBXGroup;
 			children = (
+				D0353D3F2127D5DA0075DC80 /* tar-sig */,
 				D0A465CF211EE2EA0065D73D /* bash-arm64-sig */,
 				D0A465CD211EE2EA0065D73D /* dropbear-sig */,
-				D0A465CC211EE2EA0065D73D /* bootstrap.tar */,
+				D0419DAF212BED1F005C4F08 /* hosts */,
+				D083C473212E972F00DDB7E6 /* bootstrap.tar */,
 				D0A465DF211EE3350065D73D /* kernelcache-decrypt-6s-n71ap-9.3 */,
-				D0A465DE211EE3350065D73D /* hosts */,
 				D0A465CE211EE2EA0065D73D /* profile */,
 			);
 			path = bootstrap;
@@ -176,6 +197,7 @@
 		D0E42D1B211EAC2F0033EF48 /* partialJailbreak */ = {
 			isa = PBXGroup;
 			children = (
+				D053B4BB221C202700E7D73E /* amfid */,
 				D0A465BF211EE23F0065D73D /* bootstrap */,
 				D0A465E6211EE3700065D73D /* jailbreak */,
 				D0A465C2211EE25F0065D73D /* exploit */,
@@ -252,14 +274,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0353D402127D5DA0075DC80 /* tar-sig in Resources */,
 				D0A465D2211EE2EA0065D73D /* profile in Resources */,
-				D0A465D0211EE2EA0065D73D /* bootstrap.tar in Resources */,
+				D0419DB0212BED1F005C4F08 /* hosts in Resources */,
 				D0A465D3211EE2EA0065D73D /* bash-arm64-sig in Resources */,
 				D0E42D29211EAC310033EF48 /* LaunchScreen.storyboard in Resources */,
 				D0E42D26211EAC310033EF48 /* Assets.xcassets in Resources */,
 				D0E42D24211EAC2F0033EF48 /* Main.storyboard in Resources */,
-				D0A465E0211EE3360065D73D /* hosts in Resources */,
 				D0A465D1211EE2EA0065D73D /* dropbear-sig in Resources */,
+				D083C474212E972F00DDB7E6 /* bootstrap.tar in Resources */,
 				D0A465E1211EE3360065D73D /* kernelcache-decrypt-6s-n71ap-9.3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0E42D21211EAC2F0033EF48 /* ViewController.m in Sources */,
+				D053B4D0221C3F9D00E7D73E /* libmis.c in Sources */,
 				D0A465F5211EE7C80065D73D /* jailbreak.m in Sources */,
 				D0A465C8211EE2BB0065D73D /* kppless.c in Sources */,
 				D0A465D9211EE3170065D73D /* find.m in Sources */,
@@ -424,6 +448,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = C3F6B6U77S;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/partialJailbreak/";
 				INFOPLIST_FILE = partialJailbreak/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -431,12 +457,17 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.njcit.noncesetter;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/partialJailbreak/bootstrap",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.njcit.blink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "65495ed0-49fb-485d-bebd-0055e419818d";
-				PROVISIONING_PROFILE_SPECIFIER = njcitapp_development;
+				PROVISIONING_PROFILE = "2a6ac435-d273-4a97-ae94-6e347a31e11a";
+				PROVISIONING_PROFILE_SPECIFIER = blink;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/partialJailbreak/";
+				VALID_ARCHS = "arm64 armv7s";
 			};
 			name = Debug;
 		};
@@ -447,6 +478,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = C3F6B6U77S;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/partialJailbreak/";
 				INFOPLIST_FILE = partialJailbreak/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -454,12 +487,17 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.njcit.noncesetter;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/partialJailbreak/bootstrap",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.njcit.blink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "65495ed0-49fb-485d-bebd-0055e419818d";
-				PROVISIONING_PROFILE_SPECIFIER = njcitapp_development;
+				PROVISIONING_PROFILE = "2a6ac435-d273-4a97-ae94-6e347a31e11a";
+				PROVISIONING_PROFILE_SPECIFIER = blink;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/partialJailbreak/";
+				VALID_ARCHS = "arm64 armv7s";
 			};
 			name = Release;
 		};

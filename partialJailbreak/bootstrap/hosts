@@ -4,9 +4,9 @@
 # localhost is used to configure the loopback interface
 # when the system is booting.  Do not change this entry.
 ##
-127.0.0.1	localhost
-255.255.255.255	broadcasthost
-::1             localhost 
+127.0.0.1    localhost
+255.255.255.255    broadcasthost
+::1             localhost
 
 # Apple OTA Update
 127.0.0.1 appldnld.apple.com
@@ -83,7 +83,7 @@
 127.0.0.1 cdn.millennialmedia.com
 127.0.0.1 cydia.saurik.com.cdngc.net
 
-# TV Live 
+# TV Live
 127.0.0.1 mo.baidu.com
 127.0.0.1 oc.umeng.com
 127.0.0.1 fb.umeng.com
@@ -139,7 +139,7 @@
 127.0.0.1 fusion.qq.com
 127.0.0.1 sdk.117show.com
 
-# Sina 
+# Sina
 127.0.0.1 sdkapp.mobile.sina.cn
 127.0.0.1 wbapp.mobile.sina.cn
 127.0.0.1 ps.im.weibo.cn
@@ -168,7 +168,7 @@
 127.0.0.1 cgi.connect.qq.com
 #127.0.0.1 woa.sdo.com
 127.0.0.1 test.woa.sdo.com
- 
+
 # Filza
 127.0.0.1 apis.live.net
 127.0.0.1 login.live.com
@@ -181,7 +181,7 @@
 127.0.0.1 api.sugarsync.com
 
 
-# iFile 
+# iFile
 127.0.0.1 iphone.heinelt.eu
 
 # 4G-LTE
@@ -195,3 +195,178 @@
 
 
 #  SIN-PROXY, HK-CABLE #
+
+
+# Tencent video
+#127.0.0.1 831.p23.tc.cdntip.com
+127.0.0.1 wseal.qq.com
+#127.0.0.1 omgmta.qq.com
+#127.0.0.1 rcgi.video.qq.com
+127.0.0.1 dp3.qq.com
+#127.0.0.1 vv.video.qq.com
+127.0.0.1 like.video.qq.com
+127.0.0.1 ios.video.mpush.qq.com
+#127.0.0.1 mobile.video.qq.com
+127.0.0.1 p.l.qq.com
+#127.0.0.1 mcgi.v.qq.com
+#127.0.0.1 sns.video.qq.com
+#127.0.0.1 live.qq.com
+127.0.0.1 cache.tv.qq.com
+#127.0.0.1 mdevstat.qqlive.qq.com
+#127.0.0.1 i.gtimg.cn
+127.0.0.1 aipaistat.qqlive.qq.com
+127.0.0.1 tencent.perserv-cn.seacert.com
+#127.0.0.1 mbs.video.qq.com
+#127.0.0.1 pay.video.qq.com
+127.0.0.1 splashqqlive.gtimg.com
+127.0.0.1 monitor.uu.qq.com
+127.0.0.1 upmobile.v.qq.com
+#127.0.0.1 puui.qpic.cn
+127.0.0.1 applive.qq.com
+127.0.0.1 lives.l.qq.com
+127.0.0.1 cm.v.qq.com
+#127.0.0.1 vg.video.qq.com
+127.0.0.1 pancake.apple.com
+127.0.0.1 livep.l.qq.com
+127.0.0.1 q3.qlogo.cn
+127.0.0.1 thirdqq.qlogo.cn
+127.0.0.1 bklike.video.qq.com
+127.0.0.1 dp3.qq.com
+127.0.0.1 news.l.qq.com
+127.0.0.1 p1.tcdn.qq.com
+127.0.0.1 trace.rtbasia.com
+127.0.0.1 p.tencentmind.com
+127.0.0.1 qq.irs01.com
+127.0.0.1 bkmobile.video.qq.com
+127.0.0.1 bkmcgi.v.qq.com
+127.0.0.1 bkpay.video.qq.com
+127.0.0.1 bk.upmobile.v.qq.com
+127.0.0.1 bksns.video.qq.com
+127.0.0.1 tytx.m.cn.miaozhen.com
+127.0.0.1 bklive.qq.com
+127.0.0.1 bkcm.v.qq.com
+#127.0.0.1 bkvv.video.qq.com
+#127.0.0.1 bkpay.video.qq.com
+#127.0.0.1 h5vv.video.qq.com
+127.0.0.1 cgiaccess.tcdn.qq.com
+127.0.0.1 minfo.video.qq.com
+127.0.0.1 mbs.video.qq.com
+127.0.0.1 dl1023.tcdn.qq.com
+
+# QIY
+127.0.0.1 hmma.baidu.com
+#127.0.0.1 pdata.video.qiyi.com
+#127.0.0.1 data.video.qiyi.com
+127.0.0.1 puma.api.iqiyi.com
+#127.0.0.1 iface2.iqiyi.com
+127.0.0.1 msg.71.am
+127.0.0.1 ifacelog.iqiyi.com
+127.0.0.1 paopao.iqiyi.com
+#127.0.0.1 search.video.qiyi.com
+127.0.0.1 l.rcd.iqiyi.com
+127.0.0.1 iface.iqiyi.com
+#127.0.0.1 msg.video.qiyi.com
+127.0.0.1 hotchat-im.iqiyi.com
+127.0.0.1 hotchat-im.iqiyi.com
+127.0.0.1 nl.rcd.iqiyi.com
+127.0.0.1 t7z.cupid.iqiyi.com
+127.0.0.1 policy.video.iqiyi.com
+#127.0.0.1 passport.qiyi.com
+127.0.0.1 v2h.ppstream.com
+127.0.0.1 flux.hcdn.qiyi.com
+127.0.0.1 flux.hcdn.ppstream.com
+#127.0.0.1 data.video.iqiyi.com
+127.0.0.1 static.iqiyi.com
+127.0.0.1 msg2.video.qiyi.com
+#127.0.0.1 pdata.video.iqiyi.com
+#127.0.0.1 m.iqiyipic.com
+#127.0.0.1 pic6.qiyipic.com
+#127.0.0.1 pic4.iqiyipic.com
+127.0.0.1 irs01.com
+127.0.0.1 m.irs01.com
+#127.0.0.1 cache.video.qiyi.com
+127.0.0.1 api.cupid.iqiyi.com
+127.0.0.1 msga.71.am
+#127.0.0.1 meta.video.iqiyi.com
+127.0.0.1 5S-iOS-102
+127.0.0.1 static-s.iqiyi.com
+127.0.0.1 tyaqy.m.cn.miaozhen.com
+127.0.0.1 cc.xtgreat.com
+127.0.0.1 clients2.google.com
+127.0.0.1 update.93.pangu.io
+
+
+# xueqiu app
+127.0.0.1 bugly.qq.com
+127.0.0.1 pingma.qq.com
+127.0.0.1 api.sobot.com
+127.0.0.1 ios.bugly.qq.com
+#127.0.0.1 qmas.xueqiu.com
+#127.0.0.1 api.xueqiu.com
+127.0.0.1 alogs.umeng.com
+127.0.0.1 uop.umeng.com
+127.0.0.1 xqimg.imedao.com
+#127.0.0.1 xavatar.imedao.com
+127.0.0.1 3l48s5uml9cmj3n8.alicloudlayer.com
+127.0.0.1 alogs.umeng.com
+127.0.0.1 alogs.umengcloud.com
+#127.0.0.1 assets.imedao.com
+127.0.0.1 cdn.jsdelivr.net
+127.0.0.1 alog.umengcloud.com
+127.0.0.1 assets.imedao.com
+127.0.0.1 jspatch.imedao.com
+
+# tiantian jijin & dongfangcaifu ads app
+127.0.0.1 nsclick.baidu.com
+127.0.0.1 log.umtrack.com
+127.0.0.1 log.umsns.com
+127.0.0.1 alog.umeng.co
+#127.0.0.1 z1.dfcfw.com
+#127.0.0.1 m.1234567.com.cn
+127.0.0.1 wap.1234567.com.cn
+#127.0.0.1 unitmob.1234567.com.cn
+#127.0.0.1 unitmobneice.1234567.com.cn
+127.0.0.1 waptest.1234567.com.cn
+127.0.0.1 mtest.1234567.com.cn
+127.0.0.1 j.dfcfw.com
+127.0.0.1 j5.dfcfw.com
+#127.0.0.1 nufm2.dfcfw.com
+#127.0.0.1 tradeapilvs.1234567.com.cn
+#127.0.0.1 appnews.1234567.com.cn
+127.0.0.1 appcollect2.1234567.com.cn
+127.0.0.1 appsuggest.1234567.com.cn
+127.0.0.1 appconfig2.1234567.com.cn
+127.0.0.1 appcollect.1234567.com.cn
+#127.0.0.1 bindapi.1234567.com.cn
+127.0.0.1 recomdata.1234567.com.cn
+#127.0.0.1 maccount.eastmoney.com
+#127.0.0.1 fundmobapi.eastmoney.com
+#127.0.0.1 data.eastmoney.com
+127.0.0.1 nhtradecfg.eastmoney.com
+127.0.0.1 bduserlog.eastmoney.com
+127.0.0.1 eastmoney.xdwscache.ourwebcdn.com
+127.0.0.1 data.eastmoney.com.wscdns.com
+#127.0.0.1 sztradecfg.eastmoney.com
+#127.0.0.1 lvbim.eastmoney.com
+#127.0.0.1 nhtrade.eastmoney.com
+#127.0.0.1 swdlcdn.eastmoney.com
+#127.0.0.1 msgcnt.eastmoney.com
+#127.0.0.1 lvbaccount.eastmoney.com
+#127.0.0.1 apppassport.eastmoney.com
+#127.0.0.1 mystockapi.eastmoney.com
+#127.0.0.1 newsapi.eastmoney.com
+#127.0.0.1 moniapi.eastmoney.com
+#127.0.0.1 mscstorage.eastmoney.com
+#127.0.0.1 gubaapi.eastmoney.com
+#127.0.0.1 lvbsnscdn.eastmoney.com
+#127.0.0.1 cdn.mobappconfig.eastmoney.com
+#127.0.0.1 appcert.eastmoney.com
+
+# awe app
+127.0.0.1 mon.snssdk.com
+127.0.0.1 hotsoon.snssdk.com
+127.0.0.1 settings.crashlytics.com
+127.0.0.1 api.amemv.com
+127.0.0.1 frontier.snssdk.com
+127.0.0.1 ws.l.bytedns.net
+127.0.0.1 dldir1.qq.com

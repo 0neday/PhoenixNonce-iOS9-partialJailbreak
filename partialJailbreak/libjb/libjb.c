@@ -314,33 +314,17 @@ strtail(const char *str, const char *tail)
     return memcmp(str, tail, ltail);
 }
 
-#ifdef __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__
+
 #include <CoreFoundation/CoreFoundation.h>
 static int (*MISValidateSignature)(CFStringRef path, CFDictionaryRef opt) = NULL;
-
-static int
-misvalid(const char *fpath)
+int misvalid(const char *fpath)
 {
     int rv;
     CFStringRef path;
-    if (!MISValidateSignature) {
-        return -1;
-    }
-    path = CFStringCreateWithCString(NULL, fpath, kCFStringEncodingUTF8);
-    if (!path) {
-        return -1;
-    }
     rv = MISValidateSignature(path, NULL);
     CFRelease(path);
     return rv;
 }
-#else
-static int
-misvalid(const char *fpath)
-{
-    return -1;
-}
-#endif
 
 static int
 callback(const char *fpath, int *isdir, int level)
