@@ -18,7 +18,6 @@
 
 @interface ViewController ()
 
-
 @end
 
 @implementation ViewController
@@ -35,15 +34,14 @@ double uptime(void);
     
     sharedController = self;
     
-    
     NSString *ver = [[NSProcessInfo processInfo] operatingSystemVersionString];
     struct utsname u;
     uname(&u);
-    printf("-----------------------------------\n");
+    NSLog(@"-----------------------------------------");
     LOG("Device: %s", u.machine);
     LOG("iOS Version: %@", ver);
     LOG("%s", u.version);
-    
+    NSLog(@"-----------------------------------------");
     
     //set textview
     [self.outputView setEditable:NO];
@@ -60,7 +58,7 @@ double uptime(void);
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         int waitTime;
         [self.jailbreakButton setEnabled:NO];
-        while ((waitTime = 90 - uptime()) > 0) { 
+        while ((waitTime = 90 - uptime()) > 0) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.jailbreakButton setTitle:[NSString stringWithFormat:@"wait: %d", waitTime] forState:UIControlStateNormal];
             });
@@ -213,6 +211,16 @@ double uptime(){
     }
     self = sharedController;
     return self;
+}
+
+- (IBAction)helpTapped:(id)sender {
+    
+    UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"InfoViewController"];
+    viewController.providesPresentationContextTransitionStyle = YES;
+    viewController.definesPresentationContext = YES;
+    //[viewController setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+    [viewController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 
 @end

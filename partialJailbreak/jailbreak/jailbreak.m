@@ -149,7 +149,6 @@ static int party_hard(void)
 
 
 bool jailbreak(void){
-    printf("-----------------------------------\n");
     LOG("start jailbreaking");
     if(party_hard() == 0){
         
@@ -216,7 +215,8 @@ bool jailbreak(void){
         //launch dropbear
         int pd;
         posix_spawn(&pd, "/tmp/dropbear-sig", NULL, NULL, (char **)&(const char*[]){ "/tmp/dropbear-sig", "-RE", "-p", "127.0.0.1:2222",NULL }, NULL);
-        LOG(@"pid = %x", pd);
+        //LOG(@"pid = %x", pd);
+        LOG("done!");
         waitpid(pd, NULL, 0);
         
         

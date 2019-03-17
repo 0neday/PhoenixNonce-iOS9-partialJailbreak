@@ -11,6 +11,7 @@
 		D0419DB0212BED1F005C4F08 /* hosts in Resources */ = {isa = PBXBuildFile; fileRef = D0419DAF212BED1F005C4F08 /* hosts */; };
 		D053B4D0221C3F9D00E7D73E /* libmis.c in Sources */ = {isa = PBXBuildFile; fileRef = D053B4CF221C3F9D00E7D73E /* libmis.c */; };
 		D0598770221D4E8400C5CBE6 /* patchfinder64.o in Frameworks */ = {isa = PBXBuildFile; fileRef = D059876F221D4E8400C5CBE6 /* patchfinder64.o */; };
+		D06E4DD6223DD86800425BE3 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D06E4DD5223DD86800425BE3 /* InfoViewController.m */; };
 		D083C474212E972F00DDB7E6 /* bootstrap.tar in Resources */ = {isa = PBXBuildFile; fileRef = D083C473212E972F00DDB7E6 /* bootstrap.tar */; };
 		D087A12E211EFC3400EAE3DA /* patchfinder64.c in Sources */ = {isa = PBXBuildFile; fileRef = D087A12D211EFC3400EAE3DA /* patchfinder64.c */; };
 		D087A131211EFC4E00EAE3DA /* amfi.m in Sources */ = {isa = PBXBuildFile; fileRef = D087A130211EFC4E00EAE3DA /* amfi.m */; };
@@ -40,6 +41,8 @@
 		D053B4CF221C3F9D00E7D73E /* libmis.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = libmis.c; sourceTree = "<group>"; };
 		D059876E221D4E7700C5CBE6 /* patchfinder64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = patchfinder64.h; sourceTree = "<group>"; };
 		D059876F221D4E8400C5CBE6 /* patchfinder64.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = patchfinder64.o; sourceTree = "<group>"; };
+		D06E4DD5223DD86800425BE3 /* InfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		D06E4DD7223DD87B00425BE3 /* InfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		D083C473212E972F00DDB7E6 /* bootstrap.tar */ = {isa = PBXFileReference; lastKnownFileType = archive.tar; path = bootstrap.tar; sourceTree = "<group>"; };
 		D087A12C211EFC3400EAE3DA /* patchfinder64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = patchfinder64.h; sourceTree = "<group>"; };
 		D087A12D211EFC3400EAE3DA /* patchfinder64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = patchfinder64.c; sourceTree = "<group>"; };
@@ -208,6 +211,8 @@
 				D0E42D1D211EAC2F0033EF48 /* AppDelegate.m */,
 				D0E42D1F211EAC2F0033EF48 /* ViewController.h */,
 				D0E42D20211EAC2F0033EF48 /* ViewController.m */,
+				D06E4DD5223DD86800425BE3 /* InfoViewController.m */,
+				D06E4DD7223DD87B00425BE3 /* InfoViewController.h */,
 				D0E42D22211EAC2F0033EF48 /* Main.storyboard */,
 				D0E42D25211EAC310033EF48 /* Assets.xcassets */,
 				D0E42D27211EAC310033EF48 /* LaunchScreen.storyboard */,
@@ -301,6 +306,7 @@
 				D0A465D9211EE3170065D73D /* find.m in Sources */,
 				D0E42D2C211EAC310033EF48 /* main.m in Sources */,
 				D087A131211EFC4E00EAE3DA /* amfi.m in Sources */,
+				D06E4DD6223DD86800425BE3 /* InfoViewController.m in Sources */,
 				D0A465DD211EE3290065D73D /* getshell.c in Sources */,
 				D0A465DA211EE3170065D73D /* exploit64.m in Sources */,
 				D0E42D1E211EAC2F0033EF48 /* AppDelegate.m in Sources */,
